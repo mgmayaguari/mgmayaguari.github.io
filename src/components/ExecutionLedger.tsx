@@ -41,7 +41,7 @@ export default function ExecutionLedger() {
       }
     },
     {
-      "role": "Systems Automation Architect & Founder",
+      "role": "Consultant & Systems Automation Architect",
       "organization": "MGML Ventures LLC",
       "location": "New York, NY (Remote / Global)",
       "period": "April 2025 - Present",
@@ -141,7 +141,7 @@ export default function ExecutionLedger() {
   return (
     <section className="py-16 md:py-24 border-b border-onyx relative bg-onyx-dark/30 scroll-mt-24" id="experience-ledger-section">
       <div className="max-w-6xl mx-auto px-6" id="experience-ledger-container">
-        
+
         {/* Section Header */}
         <div className="mb-14 text-center md:text-left" id="ledger-header">
           <div className="text-xs font-mono uppercase tracking-widest text-gold mb-2">
@@ -161,21 +161,21 @@ export default function ExecutionLedger() {
             const isExpanded = expandedIndex === index;
             return (
               <div key={index} className="relative group" id={`timeline-group-${index}`}>
-                
+
                 {/* Timeline Dot Indicator */}
-                <div 
+                <div
                   className={`absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                    isExpanded 
-                      ? "bg-gold border-gold scale-125 shadow-lg shadow-gold/25" 
+                    isExpanded
+                      ? "bg-gold border-gold scale-125 shadow-lg shadow-gold/25"
                       : "bg-onyx border-gold/40 group-hover:border-gold"
-                  }`} 
+                  }`}
                   id={`timeline-dot-${index}`}
                 />
 
-                <div 
+                <div
                   className={`p-6 rounded-xl border transition-all duration-300 ${
-                    isExpanded 
-                      ? "bg-onyx border-gold shadow-2xl" 
+                    isExpanded
+                      ? "bg-onyx border-gold shadow-2xl"
                       : "bg-onyx/40 border-onyx/80 hover:bg-onyx/60 hover:border-gray-700 cursor-pointer"
                   }`}
                   onClick={() => {
@@ -215,7 +215,7 @@ export default function ExecutionLedger() {
                         <Calendar className="w-3.5 h-3.5 text-gold-hover" />
                         {m.period}
                       </span>
-                      <button 
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setExpandedIndex(isExpanded ? -1 : index);
@@ -240,7 +240,7 @@ export default function ExecutionLedger() {
                         id={`timeline-expanded-${index}`}
                       >
                         <div className="mt-3 pt-3 border-t border-onyx/40 space-y-4">
-                          
+
                           {/* Highlight bullets */}
                           <div className="space-y-3">
                             {m.highlights.map((bullet, i) => (

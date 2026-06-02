@@ -16,9 +16,9 @@ export default function Footer() {
   return (
     <footer className="bg-onyx-dark pb-16 pt-16 relative" id="contact-footer">
       <div className="max-w-6xl mx-auto px-6 relative" id="footer-container">
-        
+
         {/* Call to action card */}
-        <div 
+        <div
           className="bg-onyx/60 border border-gold/15 rounded-xl p-8 md:p-10 mb-14 grid grid-cols-1 md:grid-cols-12 gap-8 items-center hover:border-gold/30 transition-all duration-300 shadow-2xl relative"
           id="cta-client-box"
         >
@@ -72,7 +72,7 @@ export default function Footer() {
 
         {/* Footer Meta Row */}
         <div className="border-t border-onyx pt-10 flex flex-col md:flex-row md:items-center justify-between gap-6" id="footer-meta-row">
-          
+
           {/* Brand */}
           <div className="space-y-1.5" id="footer-identity-col">
             <div className="font-display text-base font-bold text-white flex items-center gap-2.5">
@@ -80,15 +80,15 @@ export default function Footer() {
               <span>Michael Mayaguari</span>
             </div>
             <div className="font-mono text-xs text-gray-550">
-              Founder & Systems Automation Architect
+              Consultant & Systems Automation Architect
             </div>
           </div>
 
           {/* Social Profiles */}
           <div className="flex items-center gap-6" id="footer-social-col">
-            <a 
-              href="https://github.com/mgmayaguari" 
-              target="_blank" 
+            <a
+              href="https://github.com/mgmayaguari"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white flex items-center gap-1.5 text-xs font-mono transition-colors"
               id="footer-github"
@@ -96,10 +96,10 @@ export default function Footer() {
               <Github className="w-4 h-4" />
               <span>GitHub</span>
             </a>
-            
-            <a 
-              href="https://www.linkedin.com/in/michaelmayaguari/" 
-              target="_blank" 
+
+            <a
+              href="https://www.linkedin.com/in/michaelmayaguari/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white flex items-center gap-1.5 text-xs font-mono transition-colors"
               id="footer-linkedin"

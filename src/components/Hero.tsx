@@ -33,8 +33,8 @@ export default function Hero() {
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-onyx overflow-hidden scroll-mt-24" id="hero-section">
       {/* Decorative Golden Ambient Backlight (Slight and refined) */}
-      <div 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" 
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none"
         id="hero-glow-bg"
       />
 
@@ -46,9 +46,9 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 relative z-10" id="hero-container">
         {/* Brand Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="hero-layout">
-          
+
           {/* Column 1: Profile Portrait & Contacts (Recruiter Magnet) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -15 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -59,9 +59,9 @@ export default function Hero() {
             <div className="relative w-36 h-36 mb-4 group" id="portrait-frame">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold/40 to-transparent rounded-full animate-spin-slow opacity-75 blur-[2px] border border-dashed border-gold/30" />
               <div className="absolute inset-1.5 bg-onyx rounded-full border border-onyx-dark overflow-hidden flex items-center justify-center">
-                <img 
-                  src="https://github.com/mgmayaguari.png" 
-                  alt="Michael Mayaguari" 
+                <img
+                  src="https://github.com/mgmayaguari.png"
+                  alt="Michael Mayaguari"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 rounded-full"
                   referrerPolicy="no-referrer"
                   id="portrait-avatar-image"
@@ -80,19 +80,19 @@ export default function Hero() {
 
             {/* Quick action buttons for recruiters */}
             <div className="w-full space-y-2 mt-auto" id="recruiter-quick-actions">
-              <a 
-                href="https://linkedin.com/in/michaelmayaguari/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://linkedin.com/in/michaelmayaguari/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-1.5 bg-onyx hover:bg-onyx-dark border border-gold/30 hover:border-gold rounded-lg text-xs font-mono text-gray-300 hover:text-white transition-all duration-300"
               >
                 <Linkedin className="w-3.5 h-3.5 text-gold/80 hover:text-gold transition-colors" style={{ strokeWidth: 1.5 }} />
                 <span>LinkedIn</span>
               </a>
-              <a 
-                href="https://github.com/mgmayaguari" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/mgmayaguari"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-1.5 bg-onyx hover:bg-onyx-dark border border-gold/30 hover:border-gold rounded-lg text-xs font-mono text-gray-300 hover:text-white transition-all duration-300"
               >
                 <Github className="w-3.5 h-3.5 text-gold/80 hover:text-gold transition-colors" style={{ strokeWidth: 1.5 }} />
@@ -104,7 +104,7 @@ export default function Hero() {
           {/* Column 2: Michael's Name & Statement */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6" id="hero-info">
             <div className="space-y-4">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
@@ -113,7 +113,7 @@ export default function Hero() {
               >
                 Michael Mayaguari
               </motion.h1>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -121,22 +121,22 @@ export default function Hero() {
                 className="text-base font-mono text-gold font-medium flex items-center gap-2"
                 id="hero-subtitle-container"
               >
-                <span>Founder & Systems Automation Architect</span>
+                <span>Consultant & Systems Automation Architect</span>
               </motion.div>
 
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed text-justify"
                 id="hero-desc"
               >
-                Born in Ecuador, raised in the New York metropolitan area since 2011, and now NYC-based, my engineering and operational approach is shaped by global travel across 25 countries—including extensive solo backpacking expeditions—instilling a relentless drive to leave everything better than I found it. As a systems automation architect and founder of MGML Ventures LLC, I apply this philosophy to both physical workflows and codebase design: refactoring legacy architectures, eliminating technical debt, and streamlining integration mechanics to maximize B2B scaling and user journey efficiency.
+                Born in Ecuador, raised in the New York metropolitan area since 2011, and now NYC-based, my engineering and operational approach is shaped by global travel across 26 countries—including extensive solo backpacking expeditions—instilling a relentless drive to leave everything better than I found it. As a systems automation architect and Consultant of MGML Ventures LLC, I apply this philosophy to both physical workflows and codebase design: refactoring legacy architectures, eliminating technical debt, and streamlining integration mechanics to maximize B2B scaling and user journey efficiency.
               </motion.p>
             </div>
-            
+
             {/* Quick Stats Grid - Real systems numbers */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
@@ -158,7 +158,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -172,7 +172,7 @@ export default function Hero() {
               </div>
               <h3 className="font-display text-xl font-bold text-white mb-4" id="philosophy-title">System Beliefs</h3>
             </div>
-            
+
             <div className="space-y-3" id="philosophy-selectors">
               {philosophies.map((p, index) => {
                 const Icon = p.icon;
@@ -183,8 +183,8 @@ export default function Hero() {
                     id={`philosophy-btn-${index}`}
                     onClick={() => setActivePhilosophy(index)}
                     className={`w-full text-left p-3 rounded-lg border transition-all duration-300 flex items-start gap-3 ${
-                      isSelected 
-                        ? "bg-onyx border-gold text-white" 
+                      isSelected
+                        ? "bg-onyx border-gold text-white"
                         : "bg-transparent border-transparent hover:bg-onyx/30 text-gray-400 hover:text-gray-200"
                     }`}
                   >
@@ -210,7 +210,7 @@ export default function Hero() {
                 );
               })}
             </div>
-            
+
             <div className="mt-6 pt-4 border-t border-onyx text-[11px] font-mono text-gray-500 text-right" id="philosophy-footer">
               Select tenet to explore methodology
             </div>
