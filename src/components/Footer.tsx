@@ -80,7 +80,7 @@ export default function Footer() {
               <span>Michael Mayaguari</span>
             </div>
             <div className="font-mono text-xs text-gray-550">
-              Consultant & Systems Automation Architect
+              Systems & Full-Stack Engineer | Consultant | Global Traveler
             </div>
           </div>
 
