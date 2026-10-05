@@ -1,10 +1,8 @@
 import { useState } from "react";
 import Hero from "./components/Hero";
-import TechMatrix from "./components/TechMatrix";
-import ExecutionLedger from "./components/ExecutionLedger";
-import OpenSource from "./components/OpenSource";
-import GlobalExplorer from "./components/GlobalExplorer";
-import Footer from "./components/Footer";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import About from "./components/About";
 import { Mail, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Logo from "./components/Logo";
@@ -13,25 +11,20 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "About", href: "#hero-section" },
-    { label: "Skills", href: "#tech-matrix-section" },
-    { label: "Experience", href: "#experience-ledger-section" },
-    { label: "Projects", href: "#curated-open-source-section" },
-    { label: "Travels", href: "#global-explorer-section" },
+    { label: "Projects", href: "#projects" },
+    { label: "Experience", href: "#experience" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
     <div
       className="min-h-screen bg-charcoal text-slate-300 font-sans selection:bg-gold/35 selection:text-white antialiased transition-all duration-500"
-      id="mgm-portfolio-root"
+     
     >
-      
-      {/* Top Fixed Signature Bar */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#0B0C10]/85 backdrop-blur-md border-b border-onyx px-6 py-4" id="signature-nav-header">
-        <div className="max-w-6xl mx-auto flex items-center justify-between" id="signature-nav-container">
-          
-          {/* Logo/Monogram & Mobile menu toggle */}
-          <div className="flex items-center gap-3 select-none text-gold" id="nav-brand-logo">
+      <header className="fixed top-0 left-0 w-full z-50 bg-[#0B0C10]/85 backdrop-blur-md border-b border-onyx px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3 select-none text-gold">
             <div className="p-1 px-1.5 rounded-lg bg-onyx border border-gold/45 flex items-center justify-center shadow-md">
               <Logo className="w-6 h-6 text-gold" />
             </div>
@@ -39,9 +32,7 @@ export default function App() {
               MGML
             </span>
           </div>
-
-          {/* Eye-Friendly Navigation Menu for Recruiters */}
-          <nav className="hidden md:flex items-center gap-8 font-sans text-sm text-gray-400" id="header-nav-menu">
+          <nav className="hidden md:flex items-center gap-8 font-sans text-sm text-gray-400">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -52,24 +43,20 @@ export default function App() {
               </a>
             ))}
           </nav>
-
-          {/* Navigation Action */}
-          <div className="flex items-center gap-3 sm:gap-4" id="nav-actions">
+          <div className="flex items-center gap-3 sm:gap-4">
             <a 
               href="mailto:mayaguarimichael@gmail.com" 
               className="text-sm font-sans font-medium text-gold hover:text-white flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold/10 hover:bg-gold border border-gold/25 hover:border-gold hover:text-black transition-all duration-300 shadow-md"
-              id="nav-cta-email"
+             
             >
               <Mail className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Inquire</span>
             </a>
-
-            {/* Mobile Menu Button - Masterfully Integrated */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 rounded-lg bg-onyx border border-onyx/85 hover:border-gold/40 text-gray-400 hover:text-gold transition-all duration-300 flex items-center justify-center"
               aria-label="Toggle navigation menu"
-              id="mobile-menu-toggle-btn"
+             
             >
               {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -77,8 +64,6 @@ export default function App() {
 
         </div>
       </header>
-
-      {/* Advanced Mobile Dropdown Overlay Sheet */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -87,10 +72,10 @@ export default function App() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="fixed top-[69px] left-0 w-full z-45 bg-[#0B0C10] border-b border-onyx shadow-2xl md:hidden overflow-hidden"
-            id="mobile-nav-panel"
+           
           >
             <div className="p-6 space-y-4">
-              <nav className="flex flex-col space-y-1 font-sans text-sm text-gray-400" id="mobile-nav-links-container">
+              <nav className="flex flex-col space-y-1 font-sans text-sm text-gray-400">
                 {navLinks.map((link, idx) => (
                   <motion.a
                     key={link.label}
@@ -109,29 +94,16 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Main Single Page Content */}
-      <main className="relative" id="portfolio-main-content">
-        
-        {/* Decorative Grid Line Accents (Elite modern styling) */}
+      <main className="relative">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-6xl border-x border-onyx/20 pointer-events-none z-0" />
         
-        <div className="relative z-10" id="sections-wrapper">
+        <div className="relative z-10">
           <Hero />
-          
-          <TechMatrix />
-          
-          <ExecutionLedger />
-          
-          <OpenSource />
-          
-          <GlobalExplorer />
+          <Projects />
+          <Experience />
+          <About />
         </div>
       </main>
-
-      {/* Deluxe Footer */}
-      <Footer />
-      
     </div>
   );
 }

@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Calendar, MapPin, Plus, Minus, Layers, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
+import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
 import { CareerMilestone } from "../types";
 
-export default function ExecutionLedger() {
-  const [expandedIndex, setExpandedIndex] = useState<number>(0);
-
+export default function Experience() {
   const milestones: CareerMilestone[] = [
     {
       role: "Senior Product Specialist / QA Analyst & Operations",
@@ -139,156 +136,73 @@ export default function ExecutionLedger() {
   ];
 
   return (
-    <section className="py-16 md:py-24 border-b border-onyx relative bg-onyx-dark/30 scroll-mt-24" id="experience-ledger-section">
-      <div className="max-w-6xl mx-auto px-6" id="experience-ledger-container">
-
-        {/* Section Header */}
-        <div className="mb-14 text-center md:text-left" id="ledger-header">
-          <div className="text-xs font-mono uppercase tracking-widest text-gold mb-2">
-            <span>02 / EXECUTION HISTORY</span>
-          </div>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">
-            The Ledger of Execution
-          </h2>
-          <p className="text-sm text-gray-400 mt-2 max-w-2xl font-light">
-            A history of backend scaling, database tuning, and customized engineering services. Click an entry below to inspect architectural blueprints and core metrics.
-          </p>
+    <section className="py-16 md:py-24 border-b border-onyx bg-onyx-dark/30 scroll-mt-24" id="experience">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">Experience</h2>
         </div>
 
-        {/* Career Timeline */}
-        <div className="relative border-l border-onyx pl-6 md:pl-10 space-y-12 max-w-5xl mx-auto" id="ledger-timeline">
-          {milestones.map((m, index) => {
-            const isExpanded = expandedIndex === index;
-            return (
-              <div key={index} className="relative group" id={`timeline-group-${index}`}>
+        <div className="relative border-l border-onyx pl-6 md:pl-10 space-y-10 max-w-5xl">
+          {milestones.map((m) => (
+            <motion.article
+              key={`${m.organization}-${m.period}`}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.4 }}
+              className="relative p-6 rounded-xl border border-onyx/80 bg-onyx/40"
+            >
+              <div className="absolute -left-[31px] md:-left-[47px] top-7 w-3 h-3 rounded-full bg-gold" />
 
-                {/* Timeline Dot Indicator */}
-                <div
-                  className={`absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                    isExpanded
-                      ? "bg-gold border-gold scale-125 shadow-lg shadow-gold/25"
-                      : "bg-onyx border-gold/40 group-hover:border-gold"
-                  }`}
-                  id={`timeline-dot-${index}`}
-                />
-
-                <div
-                  className={`p-6 rounded-xl border transition-all duration-300 ${
-                    isExpanded
-                      ? "bg-onyx border-gold shadow-2xl"
-                      : "bg-onyx/40 border-onyx/80 hover:bg-onyx/60 hover:border-gray-700 cursor-pointer"
-                  }`}
-                  onClick={() => {
-                    const isClosing = isExpanded;
-                    setExpandedIndex(isClosing ? -1 : index);
-                    if (!isClosing) {
-                      setTimeout(() => {
-                        const el = document.getElementById(`timeline-card-${index}`);
-                        el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                      }, 120);
-                    }
-                  }}
-                  id={`timeline-card-${index}`}
-                >
-                  {/* Ledger Card Meta Header */}
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                    <div>
-                      {m.isConsulting && (
-                        <span className="inline-flex text-[9px] font-mono font-bold uppercase tracking-widest text-gold bg-gold/10 px-2 py-0.5 rounded mb-2">
-                          Primary Enterprise Focus
-                        </span>
-                      )}
-                      <h3 className="font-display text-lg md:text-xl font-bold text-white group-hover:text-gold transition-colors flex items-center gap-2">
-                        <span>{m.role}</span>
-                      </h3>
-                      <div className="text-sm font-medium text-gray-300 mt-0.5 font-display flex items-center gap-2 flex-wrap">
-                        <span className="text-gold-hover font-semibold">{m.organization}</span>
-                        <span className="text-gray-650">•</span>
-                        <span className="text-gray-400 flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5" /> {m.location}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 self-start md:self-center font-mono">
-                      <span className="text-xs text-gray-400 bg-onyx px-3 py-1 rounded-full border border-onyx-dark flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-gold-hover" />
-                        {m.period}
-                      </span>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedIndex(isExpanded ? -1 : index);
-                        }}
-                        className="p-1 rounded-full bg-onyx-dark hover:bg-onyx text-gray-400 hover:text-white transition-colors"
-                        id={`timeline-toggle-button-${index}`}
-                      >
-                        {isExpanded ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                      </button>
-                    </div>
+              <header className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 className="font-display text-lg md:text-xl font-bold text-white">{m.role}</h3>
+                  <div className="text-sm text-gray-300 mt-0.5 flex items-center gap-2 flex-wrap">
+                    <span className="text-gold-hover font-semibold">{m.organization}</span>
+                    <span className="text-gray-500">&bull;</span>
+                    <span className="text-gray-400 flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5" /> {m.location}
+                    </span>
                   </div>
-
-                  {/* Expanded block content: Metrics & Blueprint */}
-                  <AnimatePresence initial={false}>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                        id={`timeline-expanded-${index}`}
-                      >
-                        <div className="mt-3 pt-3 border-t border-onyx/40 space-y-4">
-
-                          {/* Highlight bullets */}
-                          <div className="space-y-3">
-                            {m.highlights.map((bullet, i) => (
-                              <div key={i} className="flex items-start gap-2.5 text-sm font-light text-gray-300">
-                                <CheckCircle2 className="w-4 h-4 text-gold mt-1 flex-shrink-0" style={{ strokeWidth: 1.5 }} />
-                                <span dangerouslySetInnerHTML={{ __html: bullet }} className="leading-relaxed" />
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Metrics Rows */}
-                          <div className="pt-4 border-t border-onyx/40">
-                            <div className="text-[10px] font-mono text-gold uppercase tracking-wider mb-3">Verified Performance Impact</div>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" id={`metrics-row-${index}`}>
-                              {m.metrics.map((metric, i) => (
-                                <div key={i} className="p-3.5 bg-shadow bg-onyx-dark rounded-lg border border-onyx-dark">
-                                  <div className="text-xs font-mono text-gray-550 uppercase">{metric.label}</div>
-                                  <div className="text-lg font-bold text-white font-display mt-1">{metric.value}</div>
-                                  <div className="text-[11px] text-gray-400 mt-0.5 leading-relaxed">{metric.description}</div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Architectural Systems Blueprint */}
-                          {m.architecturalLayer && (
-                            <div className="pt-4 border-t border-onyx/40 space-y-3">
-                              <div className="flex items-center gap-1.5 text-[10px] font-mono text-gold uppercase tracking-wider">
-                                <Layers className="w-3.5 h-3.5 text-gold-hover animate-pulse" />
-                                <span>{m.architecturalLayer.title}</span>
-                              </div>
-                              <div className="bg-onyx-dark/95 p-4 rounded-lg font-mono text-[10.5px] text-slate-300 border border-onyx/80 overflow-x-auto whitespace-pre leading-normal select-all">
-                                {m.architecturalLayer.diagram.join("\n")}
-                              </div>
-                              <p className="text-xs text-slate-400 font-light leading-relaxed">
-                                {m.architecturalLayer.explanation}
-                              </p>
-                            </div>
-                          )}
-
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
-              </div>
-            );
-          })}
+                <span className="text-xs text-gray-400 bg-onyx px-3 py-1 rounded-full border border-onyx-dark flex items-center gap-1.5 self-start shrink-0">
+                  <Calendar className="w-3.5 h-3.5 text-gold-hover" />
+                  {m.period}
+                </span>
+              </header>
+
+              <ul className="space-y-3">
+                {m.highlights.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-gray-300">
+                    <CheckCircle2 className="w-4 h-4 text-gold mt-1 shrink-0" style={{ strokeWidth: 1.5 }} />
+                    <span dangerouslySetInnerHTML={{ __html: bullet }} className="leading-relaxed" />
+                  </li>
+                ))}
+              </ul>
+
+              <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 pt-5 border-t border-onyx/40">
+                {m.metrics.map((metric) => (
+                  <div key={metric.label} className="p-3.5 bg-onyx-dark rounded-lg border border-onyx-dark">
+                    <dt className="text-xs text-gray-400">{metric.label}</dt>
+                    <dd className="text-lg font-bold text-white font-display mt-1">{metric.value}</dd>
+                    <dd className="text-xs text-gray-400 mt-0.5 leading-relaxed">{metric.description}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {m.architecturalLayer && (
+                <details className="mt-5 pt-5 border-t border-onyx/40">
+                  <summary className="cursor-pointer text-sm text-gold hover:text-gold-hover">
+                    {m.architecturalLayer.title}
+                  </summary>
+                  <pre className="mt-3 bg-onyx-dark/95 p-4 rounded-lg font-mono text-xs text-slate-300 border border-onyx/80 overflow-x-auto leading-normal">
+                    {m.architecturalLayer.diagram.join("\n")}
+                  </pre>
+                  <p className="text-sm text-slate-400 mt-3 leading-relaxed">{m.architecturalLayer.explanation}</p>
+                </details>
+              )}
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
