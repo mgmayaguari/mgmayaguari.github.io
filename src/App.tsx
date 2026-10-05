@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Hero from "./components/Hero";
 import TechMatrix from "./components/TechMatrix";
 import ExecutionLedger from "./components/ExecutionLedger";
@@ -10,13 +10,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Logo from "./components/Logo";
 
 export default function App() {
-  const activeTheme = "gold";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const currentStyles = {
-    "--color-gold": "#C5A059",
-    "--color-gold-hover": "#D6B26A",
-  } as React.CSSProperties;
 
   const navLinks = [
     { label: "About", href: "#hero-section" },
@@ -30,7 +24,6 @@ export default function App() {
     <div
       className="min-h-screen bg-charcoal text-slate-300 font-sans selection:bg-gold/35 selection:text-white antialiased transition-all duration-500"
       id="mgm-portfolio-root"
-      style={currentStyles}
     >
       
       {/* Top Fixed Signature Bar */}
@@ -48,7 +41,7 @@ export default function App() {
           </div>
 
           {/* Eye-Friendly Navigation Menu for Recruiters */}
-          <nav className="hidden md:flex items-center gap-8 font-mono text-xs text-gray-400" id="header-nav-menu">
+          <nav className="hidden md:flex items-center gap-8 font-sans text-sm text-gray-400" id="header-nav-menu">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -64,7 +57,7 @@ export default function App() {
           <div className="flex items-center gap-3 sm:gap-4" id="nav-actions">
             <a 
               href="mailto:mayaguarimichael@gmail.com" 
-              className="text-xs font-mono font-medium text-gold hover:text-white flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold/10 hover:bg-gold border border-gold/25 hover:border-gold hover:text-black transition-all duration-300 shadow-md"
+              className="text-sm font-sans font-medium text-gold hover:text-white flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold/10 hover:bg-gold border border-gold/25 hover:border-gold hover:text-black transition-all duration-300 shadow-md"
               id="nav-cta-email"
             >
               <Mail className="w-3.5 h-3.5" />
@@ -97,7 +90,7 @@ export default function App() {
             id="mobile-nav-panel"
           >
             <div className="p-6 space-y-4">
-              <nav className="flex flex-col space-y-1 font-mono text-sm text-gray-400" id="mobile-nav-links-container">
+              <nav className="flex flex-col space-y-1 font-sans text-sm text-gray-400" id="mobile-nav-links-container">
                 {navLinks.map((link, idx) => (
                   <motion.a
                     key={link.label}
@@ -109,17 +102,9 @@ export default function App() {
                     className="flex items-center justify-between p-3 rounded-lg hover:bg-onyx/40 text-gray-300 hover:text-gold border border-transparent hover:border-onyx/60 transition-all duration-200"
                   >
                     <span>{link.label}</span>
-                    <span className="text-[10px] text-gray-650 font-mono">0{idx + 1} // SYS</span>
                   </motion.a>
                 ))}
               </nav>
-
-              <div className="pt-4 border-t border-onyx/40 flex flex-col gap-3">
-                <div className="flex items-center justify-between text-[10px] font-mono text-gray-500 uppercase tracking-widest px-1">
-                  <span>System Linkage Status</span>
-                  <span className="text-gold animate-pulse">• ONLINE</span>
-                </div>
-              </div>
             </div>
           </motion.div>
         )}
