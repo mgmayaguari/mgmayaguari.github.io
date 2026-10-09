@@ -1,27 +1,18 @@
-export interface CareerMilestone {
-  role: string;
-  organization: string;
-  location: string;
-  period: string;
-  isConsulting: boolean;
-  highlights: string[];
-  metrics: {
-    label: string;
-    value: string;
-    description: string;
-  }[];
-  architecturalLayer?: {
-    title: string;
-    diagram: string[];
-    explanation: string;
-  };
-}
-
-export interface Repositories {
+export interface Project {
   name: string;
   description: string;
-  techStack: string[];
-  stars: number;
-  forks: number;
-  highlight: string;
+  href?: string;
+  inProgress?: boolean;
+}
+
+export interface Role {
+  title: string;
+  period: string;
+  bullets: string[];
+}
+
+export interface Position {
+  organization: string;
+  location: string;
+  roles: Role[];
 }
