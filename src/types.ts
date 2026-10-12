@@ -5,14 +5,11 @@ export interface Project {
   inProgress?: boolean;
 }
 
-export interface Role {
-  title: string;
-  period: string;
-  bullets: string[];
-}
-
 export interface Position {
-  organization: string;
+  title: string;
+  organization?: string;
   location: string;
-  roles: Role[];
+  period: string;
+  note?: string;
+  bullets: string[];
 }

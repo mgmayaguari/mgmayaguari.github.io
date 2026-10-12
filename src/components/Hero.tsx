@@ -9,24 +9,24 @@ export default function Hero() {
   const philosophies = [
     {
       id: "growth",
-      title: "Pragmatic Architecture",
+      title: "Adoption over novelty",
       icon: Cpu,
       valueMapping: "Growth",
-      desc: "Prioritizing sustainable system health and long-term codebase evolution over transient technical hype. Engineering on robust, battle-tested foundations to support steady operational scale while systematically minimizing maintenance overhead."
+      desc: "I build inside the tools people already know. For two retail shops in Ecuador that meant Google Sheets and Apps Script instead of a new app, because adoption was the real risk, not the code. A system the owner can run alone on day one is one that keeps running after I leave."
     },
     {
       id: "experiences",
-      title: "High-Fidelity Experiences",
+      title: "Designing for real constraints",
       icon: Compass,
       valueMapping: "Experiences",
-      desc: "Translating the extreme adaptability and fluid navigation forged across 25 countries and Puerto Rico into resilient software design. Building highly responsive user journeys engineered to gracefully absorb real-world friction and fluctuating system constraints."
+      desc: "Client work across Southeast Asia and Latin America, and travel through 25 countries and Puerto Rico, taught me to plan for limited connectivity, no technical staff, and requirements that change mid-project."
     },
     {
       id: "contribution",
-      title: "High-Impact Contribution",
+      title: "Root causes over workarounds",
       icon: Sparkles,
       valueMapping: "Contribution",
-      desc: "Driven by the core operating maxim of leaving every system better than I found it. Aggressively dismantling technical debt, refactoring legacy bottlenecks, and directly driving measurable 30% operational velocity gains."
+      desc: "At AposHealth, a high claim-rejection rate traced back to data accuracy at intake. Fixing it there, rather than reworking claims one at a time, took rejections from roughly 40% to roughly 10%."
     }
   ];
 
@@ -47,7 +47,6 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="lg:col-span-3 flex flex-col items-center text-center p-6 bg-onyx/25 border border-onyx/80 rounded-2xl relative"
-           
           >
             <div className="relative w-36 h-36 mb-4 group">
               <div className="absolute inset-0 bg-gradient-to-tr from-gold/40 to-transparent rounded-full animate-spin-slow opacity-75 blur-[2px] border border-dashed border-gold/30" />
@@ -66,8 +65,8 @@ export default function Hero() {
             <div className="space-y-1 mb-4">
               <p className="font-sans text-[10px] text-gold uppercase tracking-wider">Based in New York</p>
               <p className="font-sans text-[12px] text-slate-400 font-light mt-1">
-                B.S. Computer Science<br/>City College of NY<br/>
-                <span className="text-gold/90 font-sans text-[10px] mt-0.5 block tracking-wide">Certified AI Professional (Google)</span>
+                B.S. Computer Science, 2021<br/>City College of New York<br/>
+                <span className="text-gold/90 font-sans text-[10px] mt-0.5 block tracking-wide">AWS Solutions Architect, Associate (exam Nov 2026)</span>
               </p>
             </div>
             <div className="w-full space-y-2 mt-auto">
@@ -98,7 +97,6 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white leading-none mt-2"
-               
               >
                 Michael Mayaguari
               </motion.h1>
@@ -108,9 +106,8 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-base font-sans text-gold font-medium flex items-center gap-2"
-               
               >
-                <span>Consultant & Systems Automation Architect</span>
+                <span>Software Engineer, Integrations and Applied AI</span>
               </motion.div>
 
               <motion.p
@@ -118,9 +115,8 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed text-justify"
-               
               >
-                Born in Ecuador, raised in the New York metropolitan area since 2011, and now NYC-based, my engineering and operational approach is shaped by global travel across 25 countries and Puerto Rico—including extensive solo backpacking expeditions—instilling a relentless drive to leave everything better than I found it. As a systems automation architect and Consultant of MGML Ventures LLC, I apply this philosophy to both physical workflows and codebase design: refactoring legacy architectures, eliminating technical debt, and streamlining integration mechanics to maximize B2B scaling and user journey efficiency.
+                Bilingual engineer (native Spanish) working where software meets the people who use it. I shipped production code at Betterment, including a Plaid OAuth integration built directly with Plaid's engineering team, and drove a platform implementation at AposHealth that cut patient registration from 15 minutes to 7. I also build and support systems for small businesses in the US, Ecuador, and Southeast Asia, two of which are still in daily use two years on. I'm currently building agentic AI systems with measured eval harnesses, and I'm open to Forward Deployed, Solutions, and Implementation Engineering roles.
               </motion.p>
             </div>
             <motion.div
@@ -128,19 +124,18 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
               className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2"
-             
             >
               <div className="p-3 bg-onyx/30 border border-onyx rounded-lg hover:border-gold/20 transition-all duration-300">
-                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">Framework Core</div>
-                <div className="font-display text-xs font-semibold text-white">Ruby on Rails</div>
+                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">Languages</div>
+                <div className="font-display text-xs font-semibold text-white">Python, TypeScript, Ruby</div>
               </div>
               <div className="p-3 bg-onyx/30 border border-onyx rounded-lg hover:border-gold/20 transition-all duration-300">
-                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">State & Control</div>
-                <div className="font-display text-xs font-semibold text-white">TS & React</div>
+                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">Integrations</div>
+                <div className="font-display text-xs font-semibold text-white">REST, OAuth, Webhooks</div>
               </div>
               <div className="p-3 col-span-2 sm:col-span-1 bg-onyx/30 border border-onyx rounded-lg hover:border-gold/20 transition-all duration-300">
-                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">Primary DB</div>
-                <div className="font-display text-xs font-semibold text-white">PostgreSQL</div>
+                <div className="font-sans text-[9px] text-gray-500 uppercase tracking-wider mb-0.5">AI Systems</div>
+                <div className="font-display text-xs font-semibold text-white">Agents, RAG, Evals</div>
               </div>
             </motion.div>
           </div>
@@ -150,14 +145,13 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="lg:col-span-4 bg-onyx/50 border border-onyx rounded-xl p-5 relative flex flex-col justify-between shadow-2xl"
-           
           >
             <div>
               <div className="text-xs uppercase tracking-widest font-sans text-gold mb-3 flex items-center gap-2">
                 <Code2 className="w-4 h-4 text-gold" />
-                <span>Core Engineering Tenets</span>
+                <span>How I Work</span>
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-4">System Beliefs</h3>
+              <h3 className="font-display text-xl font-bold text-white mb-4">Principles</h3>
             </div>
 
             <div className="space-y-3">
@@ -199,7 +193,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-onyx text-[11px] font-sans text-gray-500 text-right">
-              Select tenet to explore methodology
+              Select a principle to read more
             </div>
           </motion.div>
         </div>

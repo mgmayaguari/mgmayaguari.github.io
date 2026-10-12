@@ -2,39 +2,24 @@ import { Github } from "lucide-react";
 import { Project } from "../types";
 
 const skills = [
-  { label: "Languages", items: ["Python", "TypeScript", "Ruby", "SQL", "Swift"] },
-  { label: "Frameworks", items: ["React", "FastAPI", "Ruby on Rails"] },
-  { label: "AI systems", items: ["Tool-calling agentic AI", "RAG", "Guardrail/eval design"] },
-  { label: "Cloud", items: ["AWS (pursuing Solutions Architect - Associate)"] },
-  { label: "Other", items: ["Selenium", "Solidity", "Figma"] },
+  { label: "Languages & Frameworks", items: ["Python", "TypeScript/JavaScript", "Ruby", "SQL", "FastAPI", "Ruby on Rails", "Node.js", "React"] },
+  { label: "Integrations", items: ["REST APIs", "OAuth", "Webhook and sync design", "ETL pipelines"] },
+  { label: "AI Systems", items: ["Tool-calling agents", "Retrieval-augmented generation (BM25)", "Guardrail/validator design", "Scored eval harnesses"] },
+  { label: "Data & Cloud", items: ["PostgreSQL", "MySQL", "Redshift", "AWS (Lambda, S3)", "Docker", "GitHub Actions CI/CD", "Datadog"] },
 ];
 
 const flagship: Project[] = [
+  {
+    name: "applied-ai-system-project",
+    description:
+      "A retrieval-grounded planning agent. BM25 retrieval with a measured relevance cutoff that separates in-scope from out-of-scope queries, chosen by testing rather than by default. A bounded plan → act → check → repair loop with named guardrail validators for citation grounding, category coverage, and time conflicts, plus a scored eval harness and full test suite. Built through CodePath's Applied AI Engineering track.",
+    href: "https://github.com/mgmayaguari/applied-ai-system-project",
+  },
   {
     name: "portfolio-copilot",
     description:
       "A multi-account brokerage intelligence platform with OAuth integration and a tool-calling LLM agent over deterministic financial tools. Includes an eval suite with a dedicated refusal set.",
     inProgress: true,
-  },
-  {
-    name: "Travel itinerary planner",
-    description:
-      "A retrieval-grounded travel itinerary planner, ported from an existing pet-care agent architecture: BM25 retrieval, a plan → act → check → repair loop, and named guardrail validators.",
-    inProgress: true,
-  },
-];
-
-const openSource: Project[] = [
-  {
-    name: "robinhood-portfolio-automation",
-    description:
-      "A Python/Selenium pipeline that syncs brokerage data to Google Sheets, with encrypted credentials.",
-    href: "https://github.com/mgmayaguari/robinhood-portfolio-automation",
-  },
-  {
-    name: "applied-ai-system-project",
-    description: "A retrieval-augmented planning agent with guardrails and an eval harness.",
-    href: "https://github.com/mgmayaguari/applied-ai-system-project",
   },
 ];
 
@@ -71,7 +56,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">Projects</h2>
 
-        <dl className="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-4 mb-12 pb-8 border-b border-onyx">
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4 mb-12 pb-8 border-b border-onyx">
           {skills.map((group) => (
             <div key={group.label}>
               <dt className="text-xs text-gray-500 uppercase tracking-wider mb-1">{group.label}</dt>
@@ -80,13 +65,8 @@ export default function Projects() {
           ))}
         </dl>
 
-        <h3 className="font-display text-lg font-semibold text-white mb-4">Flagship</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {flagship.map(renderProject)}
-        </div>
-
         <div className="flex items-baseline justify-between mb-4">
-          <h3 className="font-display text-lg font-semibold text-white">Open source</h3>
+          <h3 className="font-display text-lg font-semibold text-white">Flagship</h3>
           <a
             href="https://github.com/mgmayaguari"
             target="_blank"
@@ -97,7 +77,7 @@ export default function Projects() {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {openSource.map(renderProject)}
+          {flagship.map(renderProject)}
         </div>
       </div>
     </section>

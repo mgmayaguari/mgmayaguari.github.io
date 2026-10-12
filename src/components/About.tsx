@@ -40,9 +40,10 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight mb-4">About</h2>
         <p className="text-sm md:text-base text-gray-300 max-w-2xl leading-relaxed mb-8">
-          I've travelled to 25 countries and Puerto Rico, mostly solo with a backpack: Southeast Asia, the Andes,
-          Central America, Europe and the Caribbean. Moving through places where plans fall apart is where I learned to
-          stay calm and adapt, and I bring the same habits to engineering work.
+          Born in Ecuador and raised in the New York area since 2011. I've traveled to 25 countries and Puerto Rico,
+          mostly solo with a backpack, through Southeast Asia, the Andes, Central America, Europe, and the Caribbean,
+          and delivered client work along the way. Working in places where plans change quickly taught me to stay calm,
+          adapt, and design for the conditions people actually work in.
         </p>
 
         <div className="bg-onyx-dark/30 border border-onyx rounded-xl p-4 mb-16">
@@ -52,7 +53,7 @@ export default function About() {
         <div className="scroll-mt-24 border-t border-onyx pt-12" id="contact">
           <h2 className="font-display text-2xl font-bold text-white tracking-tight mb-3">Contact</h2>
           <p className="text-sm text-gray-400 max-w-lg leading-relaxed mb-6">
-            Open to forward deployed engineering roles and consulting work through MGML Ventures.
+            Open to Forward Deployed, Solutions, and Implementation Engineering roles.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="mailto:mayaguarimichael@gmail.com" className={linkClass}>

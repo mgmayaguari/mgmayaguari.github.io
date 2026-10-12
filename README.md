@@ -1,128 +1,113 @@
-### 🛰️ MGML SYSTEMS // CORE TELEMETRY PORTFOLIO
+# mgmayaguari.github.io
 
-```text
-███╗   ███╗ ██████╗ ███╗   ███╗██╗      ██████╗  ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗     ██╗ ██████╗ 
-████╗ ████║██╔════╝ ████╗ ████║██║      ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║     ██║██╔═══██╗
-██╔████╔██║██║  ███╗██╔████╔██║██║      ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
-██║╚██╔╝██║██║   ██║██║╚██╔╝██║██║      ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
-██║ ╚═╝ ██║╚██████╔╝██║ ╚═╝ ██║███████╗ ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
-╚═╝     ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝ 
-=================================== REGION CODE: NYC // ORBIT UNTIL LATE ===================================
+Personal portfolio for Michael Mayaguari. React + TypeScript + Tailwind, built with Vite.
+
+## Current state
+
+This is the interim version of the site: a single-page React app with four sections
+(Hero, Projects, Experience, About/Contact). Content is sourced from the resume and kept
+current as roles change. It's intentionally a holding pattern, not the final design — see
+the roadmap below for where it's going.
+
+## Structure
+
 ```
-
-An immersive, elite, luxury tech-noir personal telemetry board and full-stack software engineering portfolio. Designed with precision geometric lines, a monochromatic high-contrast terminal theme, and customized SVG layouts. This console translates operational career benchmarks, automation topologies, and remote geographic expeditions into interactive, stateless diagnostic grids.
-
----
-
-### 🌐 THE SYSTEM ARCHITECTURAL CONCEPT
-This application models code authorship not merely as text creation, but as a discipline of **environmental resilience** and **structured coordination**, forged by years of real-life overland transits, monsoons, and disconnected network topologies across 25 countries.
-
-Rather than static lists, this portfolio operates as a **logical state machine** exposing five operational telemetry sub-systems:
-
-1. **`01 // CORE SYSTEM LEDGER (ABOUT)`** 
-   * **Module:** `/src/components/Hero.tsx`
-   * **Function:** Serves as the primary operational uplink node. Clearly anchors the user's background of exploring 25 countries—centered on rugged parallel backpacking expeditions and high-latitude traverses—and sets the tone for high-velocity system design under environmental chaos.
-
-2. **`02 // PROTOCOL MATRIX (SKILLS)`** 
-   * **Module:** `/src/components/TechMatrix.tsx`
-   * **Function:** A interactive structural grid categorizing core tools (Languages, Runtime Substrates, Infrastructure, and Core Communication protocols) formatted inside high-contrast hover-cards.
-
-3. **`03 // AUTONOMOUS WORKFLOWS (EXPERIENCE)`**
-   * **Module:** `/src/components/ExecutionLedger.tsx`
-   * **Function:** A chronologically indexed timeline tracking career trajectories under corporate and consulting regimes (such as **MGML Ventures LLC**). Includes interactive expandable blueprints featuring actual **ASCII System Architecture Diagrams** (e.g. Asynchronous Job Workers, Zero-Trust Gateways, and Optimized DB Clusters) coupled with precise operational metrics (-53% Workflow Latency, +30% Ingestion Velocity).
-
-4. **`04 // CURATED SUITE (OPEN SOURCE)`**
-   * **Module:** `/src/components/OpenSource.tsx`
-   * **Function:** Connects directly to high-visibility repositories. Simulates terminal deployment command traces using CSS custom keyframe animations and interactive hover diagnostics.
-
-5. **`05 // GEOGRAPHICAL ISO-MAPPING (TRAVELS)`**
-   * **Module:** `/src/components/GlobalExplorer.tsx`
-   * **Function:** An elite interactive SVG world map paired with a dual-column telemetry panel. Features synchronized real-time state triggers matching country indicators (`"VN"`, `"TH"`, `"LA"`, `"BO"`, `"CU"`) to map coordinates, lighting them up in Brushed Gold (`#C5A059`) with custom-tailored systems engineering isomorphisms (e.g. Unpredictable Monsoons mapped to Redundant Route Circuit-Breakers, High Altitude throttling mapped to Prioritized Allocation Schedulers, Cuba Power Blackouts mapped to Offline-First States).
-
----
-
-### 🎨 SPECIFIED DESIGN TOKENS (LUXURY SYNTAX)
-To maintain visual consistency and honor the high-end dark space visual blueprint, CSS variables and classes enforce the following styling standards:
-
-* **🌌 Canvas Core:** Deep obsidian blacks and carbon-shadow voids (`#0B0C10`). No generic grey or blue overrides.
-* **📟 System Slabs:** Semi-translucent Onyx panels (`#1F2833`) framed on strict geometric corners (`rounded-lg`, custom pixel borders), thin border accents, and subtle visual glass backdrops.
-* **🎗️ Target Highlighters:** Dynamic Brushed Gold (`#C5A059` / `--color-gold`) paired with custom responsive states indicating active telemetry points and glowing interactive pathways.
-* **✍️ Typographical Pairings:**
-  * **Default UI:** Clean, modern Sans-serif (`Inter`) for crisp data legibility.
-  * **Display & Accent Nodes:** High-impact bold `Space Grotesk` or `Outfit` for display coordinates and section titles.
-  * **System Telemetry Logs:** High-density monospace (`JetBrains Mono`) for logs, mathematical keys, and system telemetry stats.
-* **📱 Responsive Integration:** Equipped with a high-fidelity collapsible mobile drop-down sheet driven by stateful header hooks and `motion/react` animations, providing recruiters with seamless, lag-free navigation across portable dimensions.
-
----
-
-### 📂 SOURCE SYSTEM MAP
-
-```text
 /
-├── index.html                   <-- Root document, injecting Space Grotesk, JetBrains Mono, and SVG Favicon
-├── metadata.json                <-- Application settings and permissions registry
-├── package.json                 <-- Dependency boundaries, managing Vite, Tailwind, and motion/react
-├── src/
-│   ├── App.tsx                  <-- Master coordinator, hosting fixed navigation headers & mobile drop-down menu sheets
-│   ├── main.tsx                 <-- Ingress bootstrapping point
-│   ├── index.css                <-- Global CSS orchestrator, applying custom Tailwind declarations
-│   ├── types.ts                 <-- Immutable TypeScript interface standards for all components
-│   └── components/
-│       ├── Hero.tsx             <-- Terminal title and 25-country solo-backpacking background anchor
-│       ├── TechMatrix.tsx       <-- Multi-tier skillset and toolchain queries
-│       ├── ExecutionLedger.tsx  <-- Chronological logs, performance metrics, and automated ASCII system maps
-│       ├── OpenSource.tsx       <-- Curated GitHub libraries and continuous terminal compilation sequences
-│       ├── GlobalExplorer.tsx   <-- SVG world map tracker, regional coordinates, and systems engineering analogies
-│       ├── Logo.tsx             <-- Vector signature monogram used across branding nodes
-│       └── Footer.tsx           <-- Cryptographic license check-in, real-time EST clock, and MGML Ventures LLC copyright
+├── index.html
+├── package.json
+└── src/
+    ├── App.tsx              Fixed nav header, mobile menu, section order
+    ├── main.tsx             Entry point
+    ├── index.css            Tailwind theme: fonts, colors
+    ├── types.ts             Shared TypeScript interfaces
+    └── components/
+        ├── Hero.tsx         Name, summary, education, core skill tiles, principles
+        ├── Projects.tsx     Skills strip + flagship project cards
+        ├── Experience.tsx   Work history, earlier roles, trade experience
+        ├── About.tsx        Travel paragraph, map, contact links, copyright
+        └── Logo.tsx         Monogram SVG
 ```
 
----
+## Local setup
 
-### 🚀 REPLICATING TRANECTORY LOGS (LOCAL SETUP)
-
-Maintain absolute state continuity during local workspace execution:
-
-1. **Pull the payload registry:**
-   ```bash
-   git clone https://github.com/mgmayaguari/mgmayaguari.github.io.git
-   cd mgmayaguari.github.io
-   ```
-
-2. **Ingest system packages:**
-   ```bash
-   npm install
-   ```
-
-3. **Establish local development server (binds automatically to local host port `3000`):**
-   ```bash
-   npm run dev
-   ```
-
-4. **Iterate a static production compilation build:**
-   ```bash
-   npm run build
-   ```
-
-   *The resulting compiled output resides inside the nested `/dist` space, ready for zero-latency CDN loading on GitHub Pages.*
-
----
-
-### 🧠 INGESTED COGNITIVE METAPHORS // THE WORLD AS A LOGICAL GRID
-* **South East Asia (`INCIDENT-VNTH`)** $\rightarrow$ High-precipitation monsoons translated directly to dynamic circuit-breaker routing and stateless packet retries.
-* **Andean Cordillera (`INCIDENT-ECCO`)** $\rightarrow$ Trailing 5,000-meter physical passes translated into high-altitude priority schedulers, eager memory reclaiming, and strict safety limits.
-* **Caribbean Outposts (`INCIDENT-CUDO`)** $\rightarrow$ Grid blackouts/structural supply deficits translated into offline-first client architectures and air-gapped databases.
-
----
-
-### 📈 OPERATIONAL STATUS CHECKS
-```text
-[ SYSTEM STATUS ]       ACTIVE // UNCOMPROMISED
-[ SECURITY ARCH ]       256-BIT CRYPTOGRAPHIC DIGEST SHA-256
-[ LOGICAL BRANCH ]      main
-[ TARGET INGRESS URL ]  https://github.com/mgmayaguari/mgmayaguari.github.io
-[ COMPRESS ALGORITHM ]  GZIP_FAST_STATIC (Vite Production Bundler)
+```bash
+git clone https://github.com/mgmayaguari/mgmayaguari.github.io.git
+cd mgmayaguari.github.io
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # outputs to /dist
 ```
 
-**Designed and built by MGML Ventures LLC with absolute architectural transparency.**
-*Engineering systems for extreme conditions.*
+## Design tokens
+
+- **Palette:** charcoal background (`#0B0C10`), onyx panels (`#1F2833`), gold accent (`#C5A059`).
+- **Type:** Inter for body and UI text, Space Grotesk for headings. No third typeface —
+  code or data display, if any, uses the system monospace stack.
+
+These are locked in for now; the next redesign (below) keeps them rather than
+reinventing the look.
+
+## Roadmap: moving to a static, content-first site
+
+The React version above is a stopgap. The plan is to rebuild as a static site
+(Astro or Eleventy, or hand-written HTML) built around written case studies instead of
+interactive demos. Principles for the rebuild:
+
+1. **Static HTML with real content in the source.** No client-side-only rendering;
+   content must be visible with JavaScript disabled.
+2. **A body of work, not a gallery.** Three good case studies beat twenty repo links.
+3. **Depth, not duplication.** Anyone here already has the resume — the site should add
+   to it, not restate it.
+4. **Timeboxed.** One weekend for v1, then one case study or post a month. This can't
+   eat into flagship project time.
+
+### Planned structure
+
+```
+/                         Home — positioning, 3 work cards, short about, contact
+/work/                    Index of case studies
+/work/inventory           Case study: retail inventory systems (Ecuador)
+/work/planning-agent      Case study: applied-ai-system-project
+/work/portfolio-copilot   Case study: flagship project
+/writing/                 Technical posts
+/about                    The full story
+/es/                      Spanish version (phase 3)
+```
+
+### Case study format
+
+Every case study follows the same five sections: **the situation**, **the constraint**,
+**what I built**, **what broke**, **where it is now**. "What broke" is never skipped —
+it's the most useful part of the page.
+
+Planned order: retail inventory systems first (the strongest story), then the planning
+agent, then portfolio-copilot (written as it's built), then Kawsay Urcu once it ships.
+
+### Technical requirements for the rebuild
+
+- Static HTML, content present without JS
+- Custom domain (michaelmayaguari.com)
+- Open Graph / Twitter card tags on every page
+- Mobile-first, readable at 375px
+- Fast: no framework bloat, one font family beyond the system stack, sub-1s load target
+- Accessible: real heading hierarchy, alt text, 4.5:1 contrast minimum
+- Plain-text email contact, no form
+
+### Explicitly out of scope
+
+Skill-bar percentage ratings, "passionate about" language, carousels/parallax/typing
+animations, a wall of every repo, a PDF resume as the main content, decorative
+telemetry or status readouts, and stock photos of code.
+
+### Build sequence
+
+- **Phase 1:** Convert to static. Home, About, and the inventory case study. Buy the
+  domain. Ship it.
+- **Ongoing:** one case study or post per month, roughly 30–90 minutes a week.
+- **Phase 2:** portfolio-copilot case study, all writing posts live, then put the
+  portfolio link back on the resume.
+- **Phase 3:** Spanish version (`/es`) of home, about, and one case study, with
+  hreflang tags.
+
+Until the rebuild ships, this React version stays live and gets content updates only —
+no new interactive features.
