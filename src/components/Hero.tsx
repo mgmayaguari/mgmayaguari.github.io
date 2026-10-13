@@ -66,7 +66,7 @@ export default function Hero() {
               <p className="font-sans text-[10px] text-gold uppercase tracking-wider">Based in New York</p>
               <p className="font-sans text-[12px] text-slate-400 font-light mt-1">
                 B.S. Computer Science, 2021<br/>City College of New York<br/>
-                 // TODO: add once I complete the AWS Solutions Architect, Associate certification
+                {/* TODO: add once I complete the AWS Solutions Architect, Associate certification */}
                 {/* <span className="text-gold/90 font-sans text-[10px] mt-0.5 block tracking-wide">AWS Solutions Architect, Associate</span> */}
               </p>
             </div>
