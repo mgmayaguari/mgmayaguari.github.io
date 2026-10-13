@@ -1,13 +1,12 @@
 # mgmayaguari.github.io
 
-Personal portfolio for Michael Mayaguari. React + TypeScript + Tailwind, built with Vite.
+My personal portfolio. React, TypeScript, and Tailwind, built with Vite.
 
 ## Current state
 
-This is the interim version of the site: a single-page React app with four sections
-(Hero, Projects, Experience, About/Contact). Content is sourced from the resume and kept
-current as roles change. It's intentionally a holding pattern, not the final design — see
-the roadmap below for where it's going.
+A single-page React app with four sections: Hero, Projects, Experience, About/Contact.
+Content is pulled from my resume and kept in sync as roles change. This is a holding
+pattern while I rebuild the site properly — see the roadmap below.
 
 ## Structure
 
@@ -16,15 +15,15 @@ the roadmap below for where it's going.
 ├── index.html
 ├── package.json
 └── src/
-    ├── App.tsx              Fixed nav header, mobile menu, section order
+    ├── App.tsx              Nav header, mobile menu, section order
     ├── main.tsx             Entry point
     ├── index.css            Tailwind theme: fonts, colors
     ├── types.ts             Shared TypeScript interfaces
     └── components/
-        ├── Hero.tsx         Name, summary, education, core skill tiles, principles
+        ├── Hero.tsx         Name, summary, education, core skills, principles
         ├── Projects.tsx     Skills strip + flagship project cards
         ├── Experience.tsx   Work history, earlier roles, trade experience
-        ├── About.tsx        Travel paragraph, map, contact links, copyright
+        ├── About.tsx        Travel, map, contact links, copyright
         └── Logo.tsx         Monogram SVG
 ```
 
@@ -40,74 +39,45 @@ npm run build    # outputs to /dist
 
 ## Design tokens
 
-- **Palette:** charcoal background (`#0B0C10`), onyx panels (`#1F2833`), gold accent (`#C5A059`).
-- **Type:** Inter for body and UI text, Space Grotesk for headings. No third typeface —
-  code or data display, if any, uses the system monospace stack.
+Charcoal background (`#0B0C10`), onyx panels (`#1F2833`), gold accent (`#C5A059`).
+Inter for body and UI, Space Grotesk for headings. No third typeface — if a future
+version needs one for code or data, it's the system monospace stack.
 
-These are locked in for now; the next redesign (below) keeps them rather than
-reinventing the look.
+These carry over into the rebuild unchanged.
 
-## Roadmap: moving to a static, content-first site
+## Roadmap
 
-The React version above is a stopgap. The plan is to rebuild as a static site
-(Astro or Eleventy, or hand-written HTML) built around written case studies instead of
-interactive demos. Principles for the rebuild:
+The React version is a stopgap. Next is a static site — Astro, Eleventy, or
+hand-written HTML — organized around a few real case studies instead of interactive
+demos.
 
-1. **Static HTML with real content in the source.** No client-side-only rendering;
-   content must be visible with JavaScript disabled.
-2. **A body of work, not a gallery.** Three good case studies beat twenty repo links.
-3. **Depth, not duplication.** Anyone here already has the resume — the site should add
-   to it, not restate it.
-4. **Timeboxed.** One weekend for v1, then one case study or post a month. This can't
-   eat into flagship project time.
-
-### Planned structure
+**Structure**
 
 ```
-/                         Home — positioning, 3 work cards, short about, contact
-/work/                    Index of case studies
-/work/inventory           Case study: retail inventory systems (Ecuador)
-/work/planning-agent      Case study: applied-ai-system-project
-/work/portfolio-copilot   Case study: flagship project
+/                         Home: positioning, three work cards, short about, contact
+/work/                    Case study index
+/work/inventory           Retail inventory systems (Ecuador)
+/work/planning-agent      applied-ai-system-project
+/work/portfolio-copilot   Flagship project
 /writing/                 Technical posts
-/about                    The full story
-/es/                      Spanish version (phase 3)
+/about                    Full story
+/es/                      Spanish version
 ```
 
-### Case study format
+**Case studies** follow one format: situation, constraint, what I built, what broke,
+where it is now. "What broke" stays in every time — it's the part worth reading.
+Order: inventory systems first, then the planning agent, then portfolio-copilot
+(written alongside the build), then Kawsay Urcu once it ships.
 
-Every case study follows the same five sections: **the situation**, **the constraint**,
-**what I built**, **what broke**, **where it is now**. "What broke" is never skipped —
-it's the most useful part of the page.
+**Constraints for the rebuild:** static HTML, content present without JS, a custom
+domain, Open Graph tags, mobile-first at 375px, one font family, real heading
+hierarchy and alt text, plain-text email instead of a form. No skill-bar percentages,
+no decorative status readouts, no carousels or scroll animation, no repo wall, no PDF
+resume standing in for the site.
 
-Planned order: retail inventory systems first (the strongest story), then the planning
-agent, then portfolio-copilot (written as it's built), then Kawsay Urcu once it ships.
+**Sequence:** static conversion with home, about, and the inventory case study first;
+then one case study or post a month; portfolio-copilot and the writing once those
+exist; Spanish version last.
 
-### Technical requirements for the rebuild
-
-- Static HTML, content present without JS
-- Custom domain (michaelmayaguari.com)
-- Open Graph / Twitter card tags on every page
-- Mobile-first, readable at 375px
-- Fast: no framework bloat, one font family beyond the system stack, sub-1s load target
-- Accessible: real heading hierarchy, alt text, 4.5:1 contrast minimum
-- Plain-text email contact, no form
-
-### Explicitly out of scope
-
-Skill-bar percentage ratings, "passionate about" language, carousels/parallax/typing
-animations, a wall of every repo, a PDF resume as the main content, decorative
-telemetry or status readouts, and stock photos of code.
-
-### Build sequence
-
-- **Phase 1:** Convert to static. Home, About, and the inventory case study. Buy the
-  domain. Ship it.
-- **Ongoing:** one case study or post per month, roughly 30–90 minutes a week.
-- **Phase 2:** portfolio-copilot case study, all writing posts live, then put the
-  portfolio link back on the resume.
-- **Phase 3:** Spanish version (`/es`) of home, about, and one case study, with
-  hreflang tags.
-
-Until the rebuild ships, this React version stays live and gets content updates only —
-no new interactive features.
+Until that ships, this React version only gets content updates — no new interactive
+features.

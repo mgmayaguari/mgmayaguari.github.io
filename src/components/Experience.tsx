@@ -7,9 +7,9 @@ const positions: Position[] = [
     title: "Independent Software Consultant",
     location: "Remote",
     period: "Feb 2023 - Present",
-    note: "Incorporated as MGML Ventures LLC, 2025. Engagements delivered while traveling across Southeast Asia and Latin America.",
+    note: "Incorporated as MGML Ventures LLC, 2025. Engagements delivered while traveling across Southeast Asia, Europe and Latin America.",
     bullets: [
-      "Built inventory systems for two Ecuadorian retail businesses (Papelería y Bazar Lucy; Ferrielectric) in Google Apps Script and Sheets: point-of-sale receipts that automatically decrement stock, restock and return handling, and tax-ready sales records, replacing handwritten ledgers and monthly physical counts. Deployed inside the owners' existing Google environment rather than requiring new software, and trained them to run it independently. Both remain in daily use two years later, and I still handle updates and support.",
+      "Built inventory systems for two Ecuadorian retail businesses in Google Apps Script and Sheets: point-of-sale receipts that automatically decrement stock, restock and return handling, and tax-ready sales records, replacing handwritten ledgers and monthly physical counts. Deployed inside the owners' existing Google environment rather than requiring new software, and trained them to run it independently. Both remain in daily use two years later, and I still handle updates and support.",
       "Implemented Wix CRM and HubSpot for a restaurant client. Built and consolidated the online presence for a tour villa in Sapa, Vietnam, and trained the owners to maintain it themselves.",
       "Currently building the web platform for Kawsay Urcu, a community tourism venture run by families in Azuay, Ecuador, designed for a rural operator with limited connectivity and no technical staff.",
       "Delivered Spanish-English clinical interpretation for remote consultations with AposHealth, an engagement that led to a full-time staff role.",

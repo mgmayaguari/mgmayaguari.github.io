@@ -40,7 +40,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight mb-4">About</h2>
         <p className="text-sm md:text-base text-gray-300 max-w-2xl leading-relaxed mb-8">
-          Born in Ecuador and raised in the New York area since 2011. I've traveled to 25 countries and Puerto Rico,
+          Born in Ecuador and raised in the New York area since 2011. I've traveled to 26 countries,
           mostly solo with a backpack, through Southeast Asia, the Andes, Central America, Europe, and the Caribbean,
           and delivered client work along the way. Working in places where plans change quickly taught me to stay calm,
           adapt, and design for the conditions people actually work in.

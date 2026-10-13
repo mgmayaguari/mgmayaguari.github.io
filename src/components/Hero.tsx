@@ -19,7 +19,7 @@ export default function Hero() {
       title: "Designing for real constraints",
       icon: Compass,
       valueMapping: "Experiences",
-      desc: "Client work across Southeast Asia and Latin America, and travel through 25 countries and Puerto Rico, taught me to plan for limited connectivity, no technical staff, and requirements that change mid-project."
+      desc: "Client work across Southeast Asia and Latin America, and travel through 26 countries taught me to plan for limited connectivity, no technical staff, and requirements that change mid-project."
     },
     {
       id: "contribution",
@@ -34,7 +34,7 @@ export default function Hero() {
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-onyx overflow-hidden scroll-mt-24">
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] pointer-events-none"
-       
+
       />
       <div className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[340px] h-[340px] text-gold/5 pointer-events-none hidden lg:block select-none">
         <Logo className="w-full h-full" />
@@ -56,7 +56,7 @@ export default function Hero() {
                   alt="Michael Mayaguari"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 rounded-full"
                   referrerPolicy="no-referrer"
-                 
+
                 />
               </div>
 
@@ -66,7 +66,8 @@ export default function Hero() {
               <p className="font-sans text-[10px] text-gold uppercase tracking-wider">Based in New York</p>
               <p className="font-sans text-[12px] text-slate-400 font-light mt-1">
                 B.S. Computer Science, 2021<br/>City College of New York<br/>
-                <span className="text-gold/90 font-sans text-[10px] mt-0.5 block tracking-wide">AWS Solutions Architect, Associate (exam Nov 2026)</span>
+                 // TODO: add once I complete the AWS Solutions Architect, Associate certification
+                {/* <span className="text-gold/90 font-sans text-[10px] mt-0.5 block tracking-wide">AWS Solutions Architect, Associate</span> */}
               </p>
             </div>
             <div className="w-full space-y-2 mt-auto">
@@ -116,7 +117,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed text-justify"
               >
-                Bilingual engineer (native Spanish) working where software meets the people who use it. I shipped production code at Betterment, including a Plaid OAuth integration built directly with Plaid's engineering team, and drove a platform implementation at AposHealth that cut patient registration from 15 minutes to 7. I also build and support systems for small businesses in the US, Ecuador, and Southeast Asia, two of which are still in daily use two years on. I'm currently building agentic AI systems with measured eval harnesses, and I'm open to Forward Deployed, Solutions, and Implementation Engineering roles.
+                Bilingual engineer (native Spanish) working where software meets the people who use it. I shipped production code at Betterment, including a Plaid OAuth integration built directly with Plaid's engineering team, and drove a platform implementation at AposHealth that cut patient registration from 15 minutes to 7. I also build and support systems for small businesses in the US and Ecuador, two of which are still in daily use two years on. I'm currently building agentic AI systems with measured eval harnesses, and I'm open to Forward Deployed, Solutions, and Implementation Engineering roles.
               </motion.p>
             </div>
             <motion.div
@@ -161,7 +162,7 @@ export default function Hero() {
                 return (
                   <button
                     key={index}
-                   
+
                     onClick={() => setActivePhilosophy(index)}
                     className={`w-full text-left p-3 rounded-lg border transition-all duration-300 flex items-start gap-3 ${
                       isSelected
