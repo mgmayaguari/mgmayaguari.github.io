@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Patitas Friendsgiving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: slate flyer-colored header, then one column: the list of dishes, then one short form. */
+:root {
+  --bg: #FAF5EE; --surface: #FFFFFF; --ink: #242D3A; --muted: #5A6473; --line: #E2D6C5;
+  --orange: #B84A19; --on-orange: #FFFFFF; --ok: #2B7549; --err: #B3261E; --focus: #1F5FBF;
+  --slate: #2A3441; --hero-ink: #FFF6E6; --hero-orange: #F28A52;
+  --f-script: "Kaushan Script", "Segoe Script", "Brush Script MT", cursive;
+  --f-sans: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A212B; --surface: #232C38; --ink: #F4EEE5; --muted: #A9B1BD; --line: #38434F;
+    --orange: #F2905C; --on-orange: #1E2630; --ok: #6CC38C; --err: #FF8A80; --focus: #8DB8FF;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-sans); font-size: 16px; line-height: 1.5; }
+h1, h2, p { margin: 0; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { width: 100%; max-width: 640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.hero { background: var(--slate); color: var(--hero-ink); padding-block: max(14px, env(safe-area-inset-top, 0px)) 22px; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-weight: 800; }
+.lang { display: inline-flex; border: 1px solid rgba(255,246,230,.45); border-radius: 999px; padding: 2px; }
+.lang button { font: inherit; font-weight: 800; font-size: .85rem; letter-spacing: .06em; background: transparent; color: var(--hero-ink); border: 0; border-radius: 999px; padding: 6px 14px; min-height: 36px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--hero-ink); color: var(--slate); }
+.lang button:focus-visible { outline-color: #FFF; }
+h1 { font-family: var(--f-script); font-weight: 400; font-size: clamp(2.8rem, 13vw, 4.6rem); line-height: 1.05; color: var(--hero-orange); margin-top: 10px; }
+.sub { font-family: var(--f-script); font-size: clamp(1.4rem, 6vw, 2rem); }
+.facts { margin-top: 12px; display: grid; gap: 2px; }
+.facts a { text-underline-offset: 3px; text-decoration-color: rgba(255,246,230,.5); }
+
+section { padding-block: 26px 0; }
+h2 { font-weight: 800; font-size: 1.2rem; }
+.count { color: var(--muted); margin-top: 2px; font-variant-numeric: tabular-nums; }
+ul.list { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--line); }
+ul.list li { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); }
+ul.list .what { min-width: 0; overflow-wrap: anywhere; }
+ul.list .what b { display: block; font-weight: 800; }
+ul.list .who { color: var(--muted); font-size: .92rem; }
+ul.list .n { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); font-style: italic; margin-top: 12px; }
+.warn { color: var(--err); font-weight: 600; margin-top: 12px; }
+
+form { display: grid; gap: 14px; margin-top: 12px; }
+.field { display: grid; gap: 5px; min-width: 0; }
+label { font-weight: 800; font-size: .92rem; }
+input[type=text], input[type=number] { font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 11px 12px; min-height: 48px; width: 100%; }
+input::placeholder { color: var(--muted); opacity: .85; }
+.row { display: grid; grid-template-columns: 1fr 120px; gap: 12px; }
+@media (max-width: 380px) { .row { grid-template-columns: 1fr; } }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn { font: inherit; font-weight: 800; background: var(--orange); color: var(--on-orange); border: 0; border-radius: 8px; min-height: 50px; padding: 10px 18px; cursor: pointer; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.msg { min-height: 1.4em; font-weight: 800; color: var(--ok); }
+.msg.err { color: var(--err); }
+.note { color: var(--muted); font-size: .92rem; }
+footer { margin-top: 36px; padding-block: 20px max(28px, env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <span>Patitas</span>
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <h1>Friendsgiving</h1>
+    <p class="sub" data-t="sub"></p>
+    <div class="facts">
+      <span data-t="when"></span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=251+Old+Kensico+Rd+White+Plains+NY+10607" target="_blank" rel="noopener">251 Old Kensico Rd, White Plains, NY 10607</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="listT">
+    <h2 id="listT" data-t="listTitle"></h2>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden></p>
+    <p class="warn" id="warn" hidden></p>
+  </section>
+
+  <section aria-labelledby="addT">
+    <h2 id="addT" data-t="addTitle"></h2>
+    <form id="form" autocomplete="off" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="fName" data-t="fName"></label>
+          <input type="text" id="fName" maxlength="60" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="fPeople" data-t="fPeople"></label>
+          <input type="number" id="fPeople" min="1" max="20" value="1" inputmode="numeric">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fDish" data-t="fDish"></label>
+        <input type="text" id="fDish" maxlength="100">
+      </div>
+      <div class="hp" aria-hidden="true"><label for="fWeb">Website</label><input type="text" id="fWeb" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="btn" id="save" data-t="add"></button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<div class="wrap"><footer data-t="foot"></footer></div>
+
+<script>
+/* ---------------------------------------------------------------
+   SETUP: paste the two values from Supabase > Project Settings > API
+   (Project URL, and the anon / publishable key). The key is meant to
+   be public; the security rules in supabase-setup.sql limit what it can do.
+   --------------------------------------------------------------- */
+var SUPABASE_URL = 'https://kyxoszuaiwugdljatrxp.supabase.co';       // e.g. https://abcdxyz.supabase.co
+var SUPABASE_KEY = 'sb_publishable__kqVcDJz3ssm65hqLRnNPQ_5F3ExkF3';
+
+(function () {
+  var TABLE = '/rest/v1/potluck';
+  var configured = /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(SUPABASE_URL) && SUPABASE_KEY.length > 20 && SUPABASE_KEY.indexOf('PASTE_') !== 0;
+  var base = SUPABASE_URL.replace(/\/$/, '');
+
+  /* ---- data layer (no page code in here) ---- */
+  function fetchRows() {
+    return fetch(base + TABLE + '?select=id,name,dish,people&order=created_at.asc&limit=500', {
+      headers: { apikey: SUPABASE_KEY }
+    }).then(function (r) { if (!r.ok) throw new Error('read ' + r.status); return r.json(); });
+  }
+  function addRow(row) {
+    return fetch(base + TABLE, {
+      method: 'POST',
+      headers: { apikey: SUPABASE_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+      body: JSON.stringify(row)
+    }).then(function (r) { if (!r.ok) throw new Error('write ' + r.status); });
+  }
+  /* ---- end data layer ---- */
+
+  var T = {
+    es: {
+      sub: '& Noche de Bingo', when: 'Sábado 21 de noviembre, 2026 · 6 PM',
+      listTitle: 'Qué traen todos', addTitle: 'Agrega lo tuyo',
+      fName: 'Tu nombre', fPeople: 'Personas', fDish: 'Qué vas a traer',
+      dishPh: 'Ej. puré de papas, pastel de zapallo…', add: 'Agregar a la lista',
+      people: function (n) { return n === 1 ? '1 persona' : n + ' personas'; },
+      count: function (p, d) { return p + ' personas confirmadas · ' + d + (d === 1 ? ' plato' : ' platos'); },
+      empty: 'Todavía no hay nadie. Sé la primera persona en agregar algo.',
+      loading: 'Cargando la lista…',
+      saved: 'Listo, ya estás en la lista.', needName: 'Escribe tu nombre y qué vas a traer.',
+      failed: 'No se pudo guardar. Intenta de nuevo o envíale tu respuesta a Michael por mensaje.',
+      loadFailed: 'No se pudo cargar la lista. Recarga la página o envíale tu respuesta a Michael por mensaje.',
+      notReady: 'La página aún no está conectada a la lista (falta configurar Supabase).',
+      foot: 'Patitas · Bingo por una causa. Opcional: trae un regalo para los premios del bingo.'
+    },
+    en: {
+      sub: '& Bingo Night', when: 'Saturday, November 21, 2026 · 6 PM',
+      listTitle: "What everyone's bringing", addTitle: 'Add yours',
+      fName: 'Your name', fPeople: 'People', fDish: "What you're bringing",
+      dishPh: 'e.g. mashed potatoes, pumpkin pie…', add: 'Add to the list',
+      people: function (n) { return n === 1 ? '1 person' : n + ' people'; },
+      count: function (p, d) { return p + ' people confirmed · ' + d + (d === 1 ? ' dish' : ' dishes'); },
+      empty: 'Nobody yet. Be the first to add something.',
+      loading: 'Loading the list…',
+      saved: "Done, you're on the list.", needName: "Enter your name and what you're bringing.",
+      failed: "Couldn't save. Try again, or send your answer to Michael in a message.",
+      loadFailed: "Couldn't load the list. Reload the page, or send your answer to Michael in a message.",
+      notReady: "This page isn't connected to the list yet (Supabase setup is missing).",
+      foot: 'Patitas · Bingo for a cause. Optional: bring a gift for the bingo prize pool.'
+    }
+  };
+
+  var lang = 'en';
+  try { var s = localStorage.getItem('patitas-lang'); if (s === 'es' || s === 'en') lang = s; else if ((navigator.language || '').slice(0, 2) === 'es') lang = 'es'; } catch (e) { if ((navigator.language || '').slice(0, 2) === 'es') lang = 'es'; }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var rows = [], state = configured ? 'loading' : 'notReady';
+  function tx() { return T[lang]; }
+
+  function render() {
+    var t = tx(), ul = $('list'); ul.textContent = '';
+    var people = 0;
+    rows.forEach(function (r) {
+      people += r.people || 1;
+      var li = document.createElement('li');
+      var what = document.createElement('div'); what.className = 'what';
+      var b = document.createElement('b'); b.textContent = r.dish;
+      var w = document.createElement('span'); w.className = 'who'; w.textContent = r.name;
+      what.appendChild(b); what.appendChild(w);
+      var n = document.createElement('span'); n.className = 'n'; n.textContent = t.people(r.people || 1);
+      li.appendChild(what); li.appendChild(n); ul.appendChild(li);
+    });
+    $('count').textContent = state === 'loading' ? t.loading : (state === 'ok' ? t.count(people, rows.length) : '');
+    var e = $('empty'); e.hidden = !(state === 'ok' && !rows.length); e.textContent = t.empty;
+    var w2 = $('warn'); w2.hidden = !(state === 'loadFailed' || state === 'notReady'); w2.textContent = t[state] || '';
+    $('save').disabled = !configured;
+  }
+
+  function setMsg(text, err) { var m = $('msg'); m.textContent = text; m.className = 'msg' + (err ? ' err' : ''); }
+
+  function applyLang() {
+    var t = tx(); document.documentElement.lang = lang;
+    document.querySelectorAll('[data-t]').forEach(function (n) { var v = t[n.getAttribute('data-t')]; if (typeof v === 'string') n.textContent = v; });
+    $('fDish').placeholder = t.dishPh;
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    setMsg('', false); render();
+  }
+
+  function load() {
+    if (!configured) { render(); return; }
+    fetchRows().then(function (data) {
+      rows = (Array.isArray(data) ? data : []).map(function (d) { return { name: String(d.name || ''), dish: String(d.dish || ''), people: Number(d.people) || 1 }; });
+      state = 'ok'; render();
+    }, function () { if (state !== 'ok') state = 'loadFailed'; render(); });
+  }
+
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { lang = b.getAttribute('data-lang'); try { localStorage.setItem('patitas-lang', lang); } catch (e) {} applyLang(); });
+  });
+
+  $('form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (!configured) return;
+    var name = $('fName').value.trim(), dish = $('fDish').value.trim(), people = parseInt($('fPeople').value, 10);
+    if ($('fWeb').value) return; /* spam trap */
+    if (!name || !dish) { setMsg(tx().needName, true); return; }
+    if (!(people >= 1)) people = 1; if (people > 20) people = 20;
+    $('save').disabled = true; setMsg('', false);
+    addRow({ name: name.slice(0, 60), dish: dish.slice(0, 100), people: people }).then(function () {
+      setMsg(tx().saved, false);
+      $('fDish').value = ''; $('fPeople').value = '1';
+      setTimeout(function () { $('save').disabled = false; }, 2000);
+      load();
+    }, function () { setMsg(tx().failed, true); $('save').disabled = false; });
+  });
+
+  applyLang();
+  load();
+  setInterval(function () { if (!document.hidden && state === 'ok') load(); }, 30000);
+})();
+</script>
+</body>
+</html>
