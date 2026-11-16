@@ -43,7 +43,8 @@ export default function About() {
           Born in Ecuador and raised in the New York area since 2011. I've traveled to 26 countries,
           mostly solo with a backpack, through Southeast Asia, the Andes, Central America, Europe, and the Caribbean,
           and delivered client work along the way. Working in places where plans change quickly taught me to stay calm,
-          adapt, and design for the conditions people actually work in.
+          adapt, and design for the conditions people actually work in. Outside of work, I co-founded Patitas, a nonprofit
+          in Ecuador, I hike whenever I get the chance, and I have a dog named Tavo.
         </p>
 
         <div className="bg-onyx-dark/30 border border-onyx rounded-xl p-4 mb-16">
@@ -53,7 +54,7 @@ export default function About() {
         <div className="scroll-mt-24 border-t border-onyx pt-12" id="contact">
           <h2 className="font-display text-2xl font-bold text-white tracking-tight mb-3">Contact</h2>
           <p className="text-sm text-gray-400 max-w-lg leading-relaxed mb-6">
-            Open to Forward Deployed, Solutions, and Implementation Engineering roles.
+            Open to Software,Forward Deployed, Solutions, and Implementation Engineering roles.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="mailto:mayaguarimichael@gmail.com" className={linkClass}>

@@ -6,13 +6,11 @@ const positions: Position[] = [
   {
     title: "Independent Software Consultant",
     location: "Remote",
-    period: "Feb 2023 - Present",
-    note: "Incorporated as MGML Ventures LLC, 2025. Engagements delivered while traveling across Southeast Asia, Europe and Latin America.",
+    period: "Jul 2023 - Present",
+    note: "Incorporated as MGML Ventures LLC, 2025. Engagements delivered while traveling across Southeast Asia, and Latin America.",
     bullets: [
-      "Built inventory systems for two Ecuadorian retail businesses in Google Apps Script and Sheets: point-of-sale receipts that automatically decrement stock, restock and return handling, and tax-ready sales records, replacing handwritten ledgers and monthly physical counts. Deployed inside the owners' existing Google environment rather than requiring new software, and trained them to run it independently. Both remain in daily use two years later, and I still handle updates and support.",
-      "Implemented Wix CRM and HubSpot for a restaurant client. Built and consolidated the online presence for a tour villa in Sapa, Vietnam, and trained the owners to maintain it themselves.",
-      "Currently building the web platform for Kawsay Urcu, a community tourism venture run by families in Azuay, Ecuador, designed for a rural operator with limited connectivity and no technical staff.",
-      "Delivered Spanish-English clinical interpretation for remote consultations with AposHealth, an engagement that led to a full-time staff role.",
+      "Built custom Google Apps Script and Sheets inventory/POS systems for two Ecuadorian retailers, replacing manual ledgers with automated stock decrementing and tax-ready records. Deployed into owners' environment with hands-on training; both systems remain in daily active use two years later.",
+      "Delivered Spanish-English clinical interpretation for remote AposHealth consultations, leading to a full-time staff role.",
     ],
   },
   {
@@ -22,32 +20,43 @@ const positions: Position[] = [
     period: "Aug 2024 - Sep 2026",
     note: "Previously Clinical Product Specialist",
     bullets: [
-      "Reduced patient registration-to-treatment time from 15 minutes to 7 by proposing and driving adoption of a digital self-service registration platform to replace manual EHR entry, serving as liaison between clinical staff, billing, and the vendor's implementation team under HIPAA constraints.",
-      "Diagnosed and fixed the data-accuracy root cause behind a high insurance claim-rejection rate, cutting rejections from roughly 40% to roughly 10%. Held one of the few full-access ticket queues through resolution.",
-      "Built the field-operations playbook from scratch as the program scaled from home visits to community events, then trained incoming staff.",
+      "Cut patient registration-to-treatment time from 15 to 7 minutes by proposing and driving adoption of a self-service registration platform to replace manual EHR entry, acting as liaison between clinical staff, billing, and the vendor's implementation team under HIPAA constraints. Reduced manual data-entry errors and freed more of each time-limited event appointment for physical therapist evaluation.",
+      "Diagnosed and fixed the data-accuracy root cause behind a high insurance claim-rejection rate, cutting rejections from roughly 40% to roughly 10% and reducing rework on returned claims. Established an escalation path and served as the point of contact for issues across internal IT and third-party vendors, holding one of the few full-access ticket queues.",
+      "Built the field-operations playbook from scratch as the program scaled from home visits to community events, creating a single source of truth for new hires and running recurring training sessions for review and feedback.",
+      "Owned device security and compliance (password manager rollout, device updates) and automated recurring reporting in Monday.com.",
+      "Delivered in-person patient care alongside remote licensed physical therapists, fitting and calibrating an FDA-cleared medical device, and managed on-site event logistics including insurance verification, registration, scheduling, and patient communications.",
     ],
   },
   {
     title: "Full-Stack Software Engineer",
     organization: "Betterment",
-    location: "New York, NY",
+    location: "New York, NY (Hybrid)",
     period: "Jun 2021 - Feb 2023",
     bullets: [
-      "Led a Plaid OAuth integration upgrade for financial-institution account linking, partnering directly with Plaid's engineering team and internal product stakeholders to refactor legacy models.",
+      "Led a Plaid OAuth integration upgrade for bank account linking, partnering with Plaid's product and engineering teams and internal stakeholders to refactor legacy models and deliver a more secure, lower-friction funding experience for customers.",
       "Shipped production features on Ruby on Rails and TypeScript, including REST APIs consumed by Betterment's Flutter mobile application.",
-      "Contributed to team delivery and code quality through Datadog instrumentation, Redshift reporting, and GitHub Actions CI/CD. Reviewed peer code and maintained test coverage with RSpec and Jest.",
+      "Contributed to team delivery and code quality through Datadog instrumentation, Redshift reporting, and GitHub Actions CI/CD; reviewed peer code and maintained test coverage with RSpec and Jest.",
+    ],
+  },
+  {
+    title: "Data Science Intern",
+    organization: "Pfizer",
+    location: "New York, NY (On-site)",
+    period: "Jul 2019 - Dec 2019",
+    bullets: [
+      "Built a voice-controlled Alexa Skill on AWS Lambda in Python to predict disease probability from patient-reported input.",
+      "Built ETL pipelines in Python and Dataiku DSS to clean and transform clinical research data.",
+      "Developed a JavaScript/PHP map widget using the Google Maps API to visualize trial-site locations.",
     ],
   },
 ];
 
 const earlier = [
   { role: "Lead Instructor, CodeAdvantage", period: "2020 - 2021", detail: "Designed and taught a Python and Lua curriculum for 40+ young learners." },
-  { role: "Data Science Intern, Pfizer", period: "2019", detail: "ETL pipelines in Python and Dataiku DSS; AWS Lambda Alexa Skill for clinical risk prediction." },
 ];
 
 const trade = [
-  { role: "Apprentice Electrician, JG Electric Corp", period: "2026 - Present, part-time" },
-  { role: "Apprentice Electrician, Hudson River Electric", period: "2016 - 2017" },
+  { role: "Apprentice Electrician, JG Electric Corp", period: "Sep 2026 - Present" },
 ];
 
 export default function Experience() {

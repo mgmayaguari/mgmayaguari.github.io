@@ -117,7 +117,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed text-justify"
               >
-                Bilingual engineer (native Spanish) working where software meets the people who use it. I shipped production code at Betterment, including a Plaid OAuth integration built directly with Plaid's engineering team, and drove a platform implementation at AposHealth that cut patient registration from 15 minutes to 7. I also build and support systems for small businesses in the US and Ecuador, two of which are still in daily use two years on. I'm currently building agentic AI systems with measured eval harnesses, and I'm open to Forward Deployed, Solutions, and Implementation Engineering roles.
+                I build integrations between systems and the people who have to use them. At Betterment, I led a Plaid OAuth integration, working directly with Plaid's engineering team. At AposHealth, I replaced manual patient intake with a self-service platform and cut registration from 15 to 7 minutes. In two shops in Ecuador, I replaced handwritten notebooks with inventory systems still running two years later. Native Spanish, with software deployed to real businesses in Latin America. I'm currently building agentic AI systems with measured eval harnesses, and I'm open to Software,Forward Deployed, Solutions, and Implementation Engineering roles.
               </motion.p>
             </div>
             <motion.div
